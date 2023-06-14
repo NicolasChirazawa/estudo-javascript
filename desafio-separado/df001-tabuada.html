@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+
+    <style>
+
+        body{
+
+            padding: 0px;
+            border: 0px;
+            margin: 0px;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background-color: black;
+            color: white;
+        }
+
+        h1{
+
+            text-align: center;
+
+            margin-top: 20px;
+        }
+
+        p{
+
+            font-size: 17px;
+
+            text-align: justify;
+            text-indent: 20px;
+
+            margin: 20px 100px 0px 100px;
+        }
+
+        div{
+
+            display: block;
+        }
+
+        label{
+            
+            display: inline-block;
+
+            margin: 20px 20px 0px 100px;
+        }
+
+        button{
+
+            margin: 20px 10px 0px 0px;
+        }
+
+        button#criar{
+
+            margin-left: 100px;
+        }
+
+        div#resultado{
+
+            font-size: 20px;
+            text-align: center;
+
+            margin-top: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Aprendendo Tabuadas</h1>
+
+    <p>
+        A tabuada é uma tabela matemática usada para realizar operações de multiplicação de forma organizada e sistemática. Ela é usada principalmente para auxiliar no aprendizado e na memorização das multiplicacões. A tabuada consiste em uma sequência de números, geralmente de 1 a 10, que são multiplicados por outro número específico.
+    </p>
+
+    <p>
+        Por exemplo, ao criar a tabuada do número 5, você multiplica o número 5 por cada um dos números da sequência de 1 a 10. O resultado dessas multiplicações é organizado em uma tabela, onde cada linha representa um número da sequência e cada coluna representa o número multiplicado. Dessa forma, você pode facilmente encontrar o resultado da multiplicação entre o número 5 e qualquer número da sequência.
+    </p>
+
+    <p>
+        A tabuada é amplamente utilizada em escolas e no ensino básico da matemática para ajudar os alunos a compreenderem e praticarem as operações de multiplicação. Além disso, ela também é útil em situações cotidianas, como cálculos rápidos, resolução de problemas e desenvolvimento de habilidades numéricas.
+    </p>
+
+    <p>
+        Quer ver como funciona na prática?
+    </p>
+
+    <p>
+        Abaixo a uma calculadora de tabuadas, basta inserir o valor e clicar no botão <strong>"Criar Tabuada!"</strong>, caso queira criar outra, use o <strong>"Limpar Tabuada!"</strong> para criar uma nova.
+    </p>
+
+    <div>
+        <label for="inserirNumero">Insira o valor da tabuada: </label>
+        <input type="text" id="inserirNumero">
+    </div>
+
+    <button id="criar">Criar Tabuada!</button>
+    <button id="apagar">Limpar Tabuada!</button>
+
+    <div id= "resultado"></div>
+
+    <br>
+
+    <script>
+
+        //Botão criar tabuada
+
+        var botaoCriar = window.document.getElementById("criar");
+        botaoCriar.addEventListener('click', criarTabuada);
+
+        //Botão apagar tabuada
+
+        var botaoApagar = window.document.getElementById("apagar");
+        botaoApagar.addEventListener ("click", apagarTabuada);
+
+        /*
+        var numero = window.prompt("Digite o número da tabuada:");
+        Number(numero);
+        */
+
+        var inputNumero = window.document.getElementById("inserirNumero");
+
+        function criarTabuada(){
+
+            var numero = Number(inputNumero.value);
+            var i = 1;
+            var texto = '';
+
+            while (i <= 10){
+
+                texto += `<br>${numero} X ${i} = ${numero * i}`;
+                i++;
+            }
+
+            window.document.getElementById("resultado").innerHTML = texto;
+        }
+
+        function apagarTabuada(){
+
+            window.document.getElementById("resultado").innerHTML = '';
+        }
+
+    </script>
+
+</body>
+</html>

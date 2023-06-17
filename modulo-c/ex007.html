@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+
+    <style>
+    
+        body{
+
+            font: normal 20px 'Arial';
+        }
+
+        div{
+
+            display: inline-block;
+
+            margin: 10px 0px 5px 0px;
+        }
+
+        input{
+
+            font-size: 20px;
+        }
+
+        button{
+
+            display: inline;
+
+            padding: 5px;
+        }
+
+        div#resultado{
+
+            display: block;
+
+            margin: 10px 0px 5px 0px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>Somando valores</h1>
+
+    <div>
+        <input type="number" name="textn1" id="textn1"> +
+    </div>
+
+    <div>
+        <input type="number" name="textn2" id="textn2">
+    </div>
+
+    <button id="soma">Somar Valores</button>
+
+    <div id="resultado">Resultado:</div>
+
+    <script>
+
+        
+        var soma = window.document.getElementById("soma");
+        soma.addEventListener("click", somarValores);
+
+        function somarValores(){
+
+            var inputNum1 = window.document.getElementById("textn1");
+            var inputNum2 = window.document.getElementById("textn2");
+
+            var numero1 = Number(inputNum1.value);
+            var numero2 = Number(inputNum2.value)
+
+            var resultado = window.document.getElementById("resultado");
+            resultado.innerHTML = (`A soma dos dois numerais dá o resultado: ${numero1 + numero2}`);
+        }
+
+    </script>
+</body>
+</html>

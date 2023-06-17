@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central do Aeroporto</title>
+</head>
+<body>
+
+    <h1>Central do Aeroporto</h1>
+
+    <label for="inppais">Você é de onde? </label>
+    <input type="text" name="inppais" id="inppais">
+
+    <button id="botao">Descubra!</button>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        var botao = window.document.getElementById("botao");
+        botao.addEventListener("click", testeNacionalidade);
+
+        function testeNacionalidade(){
+
+            var inppais = window.document.getElementById("inppais");
+            var pais = String(inppais.value);
+
+            if(pais == 'Brasil'){
+
+                window.document.getElementById("resultado").innerHTML = 'Você é brasileiro'
+
+            } else {
+
+                window.document.getElementById("resultado").innerHTML = 'Você é estrangeiro'
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

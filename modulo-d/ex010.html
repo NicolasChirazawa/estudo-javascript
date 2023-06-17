@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+
+</head>
+<body>
+    
+    <h1>Sistema de Multas</h1>
+
+    <label for="inpnum">Qual foi a sua velocidade?</label>
+    <input type="number" name="inpvel" id="inpvel"> Km/h.
+
+    <input type="button" value="Verificar" id="botao">
+
+    <div id="resultado"></div>
+
+    <script>
+
+        var executar = window.document.getElementById("botao");
+        executar.addEventListener("click", calcular);
+
+        function calcular(){
+
+            var inpvel = window.document.getElementById("inpvel");
+            var vel = Number(inpvel.value);
+
+            if(vel > 60){
+                window.document.getElementById("resultado").innerHTML = `<p>Você<strong> ultrapassou o limite de velocidade</strong> de 60 km/h e foi multado, sua velocidade ao passar o radar foi de <strong>${vel} km/h</strong></p>`;
+            } else {
+
+                window.document.getElementById("resultado").innerHTML = `<p>Você passou <strong>abaixo do limite de velocidade</strong> de 60 km/h, sua velocidade foi <strong>${vel} km/h</strong></p>`;
+            }
+
+            window.document.getElementById("resultado").innerHTML += '<p>Pode testar com um outro valor, caso queira também</p>'
+
+        }
+    </script>
+</body>
+</html>
